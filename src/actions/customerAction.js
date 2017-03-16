@@ -2,8 +2,13 @@ import axios from 'axios';
 
 const ROOT_URL = 'http://localhost:8000/api';
 
+// Actions types
 export const FETCH_CUSTOMERS = 'FETCH_CUSTOMERS';
+export const CREATE_CUSTOMERS = 'CREATE_CUSTOMERS';
+export const DELETE_CUSTOMER = 'DELETE_CUSTOMER';
+export const EDIT_CUSTOMER = 'EDIT_CUSTOMER';
 
+// Get customer from DB
 export function fetchCustomers(){
   const request = axios.get(`${ROOT_URL}/customers`);
 
@@ -12,30 +17,33 @@ export function fetchCustomers(){
     payload: request
   };
 }
+// Create customer and add to DB
+export function createCustomers(customer){
+  const request = axios.post(`${ROOT_URL}/customers`, customer)
 
-// export function createCustomer(customer) {
-//   const request = axios.post(`${ROOT_URL}/customers`, customer);
-//
-//   return {
-//     type: AppConstants.CUSTOMER_CREATE_SUCCESS,
-//     payload: request
-//   };
-// }
-//
-// export function editCustomer(customer) {
-//   const request = axios.put(`${ROOT_URL}/customers/${customer.id}`, customer);
-//
-//   return {
-//     type: AppConstants.CUSTOMER_UPDATE_SUCCESS,
-//     payload: request
-//   };
-// }
-//
-// export function removeCustomer(customerId) {
-//   const request = axios.delete(`${ROOT_URL}/customers/${customerId}`);
-//
-//   return {
-//     type: AppConstants.CUSTOMER_DELETE_SUCCESS,
-//     payload: request
-//   };
-// }
+  return {
+    type: CREATE_CUSTOMERS,
+    payload: request
+  }
+}
+
+// Delete customer and remove from DB
+export function delCustomers(id){
+	const request = axios.delete(`${ROOT_URL}/customers/${id}`)
+	console.log('Click!!')
+	return {
+		type: DELETE_CUSTOMER,
+		payload: request
+	}
+}
+
+// Edit customer and add to DB
+
+export function editCustomerInfo(customer){
+	const request = axios.put(`${ROOT_URL}/customers/${customer.id}`, customer);
+
+	return {
+		type: EDIT_CUSTOMER,
+		payload: request
+	}
+}

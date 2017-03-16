@@ -1,11 +1,12 @@
 import React from 'react';
-import { Grid, PageHeader, Table } from 'react-bootstrap';
+import { Grid, PageHeader, Table, Button } from 'react-bootstrap';
 
 
 export default (props) => {
 	return(
 		<Grid>
 			<PageHeader>Invoice List</PageHeader>
+			<Button bsStyle="success">Create</Button>
 			<Table>
 				<thead>
 					<tr>

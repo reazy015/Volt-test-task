@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { fetchCustomers } from '../../actions/customerAction';
+import { fetchCustomers, createCustomers, delCustomers, editCustomerInfo } from '../../actions/customerAction';
 import  CustomerPageComponent  from '../../components/customerPageComponent';
 
 class CustomerPageContainer extends Component{
@@ -13,6 +13,9 @@ class CustomerPageContainer extends Component{
     return(
 				<CustomerPageComponent
 					customers = { this.props.customers }
+					createCustomers = { this.props.createCustomers }
+					delCustomers = { this.props.delCustomers }
+					editCustomers = { this.props.editCustomerInfo }
 					/>
 			)
   }
@@ -24,4 +27,4 @@ function mapStateToProps(state){
 	}
 }
 
-export default connect(mapStateToProps, { fetchCustomers })(CustomerPageContainer);
+export default connect(mapStateToProps, { fetchCustomers, createCustomers, delCustomers, editCustomerInfo })(CustomerPageContainer);
