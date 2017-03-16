@@ -1,4 +1,4 @@
-// Type of actions
+// Type of actions for Customers
 import { FETCH_CUSTOMERS, CREATE_CUSTOMERS, DELETE_CUSTOMER, EDIT_CUSTOMER } from '../actions/customerAction';
 
 export default function(customers=[], action){

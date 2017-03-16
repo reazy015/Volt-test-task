@@ -5,12 +5,12 @@ export default (props) => {
   return(
 	<span>
 		<Button
-			style={{verticalAlign: 'middle', marginLeft: 20}}
+			style={{verticalAlign: 'middle'}}
 			onClick={props.open}
 			bsStyle={props.style}>{props.type}</Button>
 		<Modal show={props.showModal}>
 			<Form onSubmit={props.actionToActWithCustomer}>
-				<Modal.Header><h3>Create new customer</h3></Modal.Header>
+				<Modal.Header><h3>{props.header}</h3></Modal.Header>
 				<Modal.Body>
 					<FormGroup>
 						<ControlLabel>Customer's name</ControlLabel>

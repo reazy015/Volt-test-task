@@ -29,8 +29,8 @@ export function createCustomers(customer){
 
 // Delete customer and remove from DB
 export function delCustomers(id){
-	const request = axios.delete(`${ROOT_URL}/customers/${id}`)
-	console.log('Click!!')
+	const request = axios.delete(`${ROOT_URL}/customers/${id}`);
+
 	return {
 		type: DELETE_CUSTOMER,
 		payload: request

@@ -28,7 +28,9 @@ export default (props) =>{
 								<td>{customer.address}</td>
 								<td>{customer.phone}</td>
 								<td>
-									<EditCustomerContainer customer = { customer } editCustomer={props.editCustomers}/>
+									<EditCustomerContainer
+										style={{margin: 10}}
+										 customer = { customer } editCustomer={props.editCustomers}/>
 									<DeleteCustomerModal id ={customer.id} delCustomer={props.delCustomers}/>
 								</td>
 							</tr>))

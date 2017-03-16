@@ -1,10 +1,16 @@
 import React from 'react';
 import { Grid, PageHeader, Table} from 'react-bootstrap';
 
+import CreateProductModal from '../containers/productContainer/createProductContainer';
+import DeleteProductModal from '../containers/productContainer/delProductContainer';
+import EditProductContainer from '../containers/productContainer/editProductContainer';
+
 export default (props) => {
 	return(
 		<Grid>
-			<PageHeader>Products List</PageHeader>
+			<PageHeader>Products List
+				<CreateProductModal createProducts = { props.createProducts}/>
+			</PageHeader>
 			<Table>
 				<thead>
 					<tr>
@@ -19,6 +25,10 @@ export default (props) => {
 							<td>{product.id}</td>
 							<td>{product.name}</td>
 							<td>{product.price}</td>
+              <td>
+								<EditProductContainer product = { product } editProducts = { props.editPoducts}/>
+								<DeleteProductModal id = { product.id } deleteProducts = { props.deleteProducts }/>
+							</td>
 						</tr>
 					))
 				}

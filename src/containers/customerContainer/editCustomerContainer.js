@@ -32,6 +32,7 @@ class EditCustomerContainer extends Component{
 	render(){
 		return(
 			<CreateCustomerComponent
+				header={'Edit Customer'}
 				type={'Edit'}
 				style={'primary'}
 				showModal={this.state.showModal}

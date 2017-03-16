@@ -31,6 +31,7 @@ class CreateCustomerContainer extends Component{
 	render(){
 		return(
 		<CreateCustomerComponent
+				header={'Create New Customer'}
 				type={'Create new customer'}
 				style={'success'}
 				open={this.openModal.bind(this)}
