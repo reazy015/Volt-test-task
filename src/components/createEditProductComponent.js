@@ -13,13 +13,13 @@ export default (props) => {
 					<Modal.Body>
 							<FormGroup>
 								<ControlLabel>Product Title</ControlLabel>
-								<FormControl type='text' name='name' />
+								<FormControl type='text' name='name' defaultValue = { props.product ? props.product.name : '' }/>
 								<ControlLabel>Product Price</ControlLabel>
-								<FormControl type='text' name='price'/>
+								<FormControl type='text' name='price' defaultValue = { props.product ? props.product.price : ''}/>
 							</FormGroup>
 					</Modal.Body>
 					<Modal.Footer>
-						<Button type='submit' >Create</Button>
+						<Button type='submit' >{props.type}</Button>
 						<Button onClick={props.close}>Close</Button>
 					</Modal.Footer>
 				</Form>

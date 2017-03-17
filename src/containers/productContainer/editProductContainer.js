@@ -19,22 +19,24 @@ class EditProductContainer extends Component{
 	}
 
 	onEditProduct(event){
+		event.preventDefault();
 		this.props.editProducts({
 			name: event.target.name.value,
-			price: event.target.name.value,
+			price: event.target.price.value,
 			id: this.props.product.id
-		});
+		})
 		this.closeModal();
 	}
 
 	render(){
 			return(
 				<CreateEditProductComponent
-					 type = { 'Create' }
+					 type = { 'Edit' }
 					 show = { this.state.showModal }
 					 open = { this.openModal.bind(this) }
 					 close = { this.closeModal.bind(this) }
-					 actionToProduct = { this.props.onEditProduct}
+					 actionToProduct = { this.onEditProduct.bind(this)}
+					 product = { this.props.product }
 					/>
 		)
 	}

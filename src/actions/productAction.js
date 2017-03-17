@@ -39,11 +39,11 @@ export function delProducts(id){
 }
 
 // Edit products and add to DB
-export function editPoduct(product){
+export function editProduct(product){
 	const request = axios.put(`${ROOT_URL}/products/${product.id}`, product);
 
 	return {
-		action: EDIT_PRODUCTS,
+		type: EDIT_PRODUCTS,
 		payload: request
 	}
 }

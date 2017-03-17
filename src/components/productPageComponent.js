@@ -26,7 +26,7 @@ export default (props) => {
 							<td>{product.name}</td>
 							<td>{product.price}</td>
               <td>
-								<EditProductContainer product = { product } editProducts = { props.editPoducts}/>
+								<EditProductContainer product = { product } editProducts = { props.editProducts}/>
 								<DeleteProductModal id = { product.id } deleteProducts = { props.deleteProducts }/>
 							</td>
 						</tr>

@@ -8,11 +8,11 @@ export default function(customers=[], action){
     case CREATE_CUSTOMERS:
       return [...customers, action.payload.data];
 		case DELETE_CUSTOMER:
-			const filterCustomers = customers.filter( customer => customer.id !== action.payload.data.id);
-			return [...filterCustomers];
+			const filteredCustomers = customers.filter( customer => customer.id !== action.payload.data.id);
+			return [...filteredCustomers];
 		case EDIT_CUSTOMER:
-			const editedCustomers = customers.filter(customer => customer.id !== action.payload.data.id);
-			return [...editedCustomers, action.payload.data];
+			const newCustomersState = customers.filter(customer => customer.id !== action.payload.data.id);
+			return [...newCustomersState, action.payload.data];
 		default:
 			return customers;
 	}
