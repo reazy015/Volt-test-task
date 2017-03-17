@@ -9,6 +9,7 @@ class InvoicePageContainer extends Component{
 		return(
 			<InvoicePageComponent
 				invoices={this.props.invoices}
+        title = { 'Invoices' }
 				 />
 		)
 	}

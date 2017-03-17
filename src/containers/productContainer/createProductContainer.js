@@ -30,6 +30,7 @@ class CreateProductModal extends Component {
 		return(
 			<CreateEditProductComponent
 				type={'Create'}
+				header = { 'Create New Product' }
 				open={this.openModal.bind(this)}
 				close={this.closeModal.bind(this)}
 				show={this.state.showModal}

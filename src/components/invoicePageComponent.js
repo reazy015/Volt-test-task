@@ -1,12 +1,12 @@
 import React from 'react';
 import { Grid, PageHeader, Table, Button } from 'react-bootstrap';
-
+import DocumentTitle from 'react-document-title';
 
 export default (props) => {
 	return(
+    <DocumentTitle title = { props.title }>
 		<Grid>
-			<PageHeader>Invoice List</PageHeader>
-			<Button bsStyle="success">Create</Button>
+			<PageHeader>Invoice List</PageHeader>			
 			<Table>
 				<thead>
 					<tr>
@@ -25,5 +25,6 @@ export default (props) => {
 				</tbody>
 			</Table>
 		</Grid>
+  </DocumentTitle>
 	)
 }

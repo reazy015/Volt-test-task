@@ -15,6 +15,7 @@ class ProductPageContainer extends Component {
          createProducts = { this.props.createProducts }
 				 deleteProducts = { this.props.delProducts }
 				 editProducts = { this.props.editProduct }
+				 title = { 'Products' }
 			/>
 		)
 	}

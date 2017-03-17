@@ -16,6 +16,7 @@ class CustomerPageContainer extends Component{
 					createCustomers = { this.props.createCustomers }
 					delCustomers = { this.props.delCustomers }
 					editCustomers = { this.props.editCustomerInfo }
+					title = { 'Customers' }
 					/>
 			)
   }

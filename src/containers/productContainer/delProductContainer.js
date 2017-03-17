@@ -24,11 +24,14 @@ onDeleteProduct(){
 	render(){
 		return(
 			<span>
-        <Button onClick={this.openModal.bind(this)}>Delete</Button>
+        <Button
+					style={{marginLeft: 5}}
+					bsStyle='danger'
+					onClick={this.openModal.bind(this)}>Delete</Button>
 
         <Modal show={this.state.showModal}>
-          <Modal.Header>Attention!</Modal.Header>
-					<Modal.Title>
+          <Modal.Header style={{textAlign: 'center', color: 'red'}}><h1>Attention!</h1></Modal.Header>
+					<Modal.Title style={{textAlign: 'center', fontSize: 24, fontWeight: 'bold'}}>
 						Are you sure you want to delete this product?
 					</Modal.Title>
 					<Modal.Footer>

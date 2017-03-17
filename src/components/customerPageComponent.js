@@ -1,5 +1,6 @@
 import React from 'react';
 import { Grid, PageHeader, Table } from 'react-bootstrap';
+import DocumentTitle from 'react-document-title';
 
 import CreateCustomerContainer from '../containers/customerContainer/createCustomerContainer';
 import DeleteCustomerModal from  '../containers/customerContainer/delCustomerContainer';
@@ -7,6 +8,7 @@ import EditCustomerContainer from '../containers/customerContainer/editCustomerC
 
 export default (props) =>{
   return(
+		<DocumentTitle title={props.title}>
     <Grid>
       <PageHeader>Customer List
         <CreateCustomerContainer  createCustomers = { props.createCustomers}/>
@@ -39,5 +41,6 @@ export default (props) =>{
         </tbody>
       </Table>
     </Grid>
+	</DocumentTitle>
   )
 }

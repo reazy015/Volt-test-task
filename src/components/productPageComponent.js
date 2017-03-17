@@ -1,5 +1,6 @@
 import React from 'react';
 import { Grid, PageHeader, Table} from 'react-bootstrap';
+import DocumentTitle from 'react-document-title';
 
 import CreateProductModal from '../containers/productContainer/createProductContainer';
 import DeleteProductModal from '../containers/productContainer/delProductContainer';
@@ -7,6 +8,7 @@ import EditProductContainer from '../containers/productContainer/editProductCont
 
 export default (props) => {
 	return(
+		<DocumentTitle title = { props.title }>
 		<Grid>
 			<PageHeader>Products List
 				<CreateProductModal createProducts = { props.createProducts}/>
@@ -35,5 +37,6 @@ export default (props) => {
 				</tbody>
 			</Table>
 		</Grid>
+	</DocumentTitle>
 	)
 }

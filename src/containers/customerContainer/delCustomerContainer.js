@@ -26,7 +26,9 @@ class DeleteCustomerModal extends Component {
 	render(){
 		return(
 			<span>
-				<Button onClick={this.openModal.bind(this)} bsStyle='danger'>Delete</Button>
+				<Button
+          style={{marginLeft: 5}}
+          onClick={this.openModal.bind(this)} bsStyle='danger'>Delete</Button>
 
 				<Modal show={this.state.showModal}>
 					<Modal.Header>
