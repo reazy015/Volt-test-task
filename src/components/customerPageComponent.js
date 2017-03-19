@@ -7,6 +7,7 @@ import DeleteCustomerModal from  '../containers/customerContainer/delCustomerCon
 import EditCustomerContainer from '../containers/customerContainer/editCustomerContainer';
 
 export default (props) =>{
+
   return(
 		<DocumentTitle title={props.title}>
     <Grid>
