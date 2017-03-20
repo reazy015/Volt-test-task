@@ -96,12 +96,24 @@ export default class CreateInvoiceComponent extends Component {
 			return 0;
 		}
 
+    // Create Invoice and place it to DB
+
+    onCreateInvoice(event){
+      event.preventDefault();
+      this.props.actionToCreateInvoice({
+				customer_id: this.state.customer.value,
+				discount: this.state.discount,
+				total: this.getTotalSum()
+			})
+			console.log('Click!!!')
+    }
+
 render(){
 	return(
 		<Grid>
 			<DocumentTitle title={this.props.title}/>
 			<PageHeader>{this.props.header}</PageHeader>
-			<Form>
+			<Form onSubmit={this.onCreateInvoice.bind(this)}>
 				<FormGroup>
 					<ControlLabel>Discount (%)</ControlLabel>
 					<FormControl
@@ -143,6 +155,7 @@ render(){
 								}
 							})}
 							onChange = {this.onProductChange.bind(this)}
+							required
 							/>
 						<InputGroup.Button><Button onClick={this.onItemAdd.bind(this)}>Add</Button></InputGroup.Button>
 					</InputGroup>
@@ -182,12 +195,13 @@ render(){
 						}
 					</tbody>
 				</Table>
+				<div>
+					<h2>Total Price: {this.getTotalSum()}</h2>
+				</div>
+				<Button	type='submit' bsStyle='success'>Create</Button>
+				<LinkContainer to='/invoice'><Button bsStyle='warning'>Close</Button></LinkContainer>
 			</Form>
-			<div>
-				<h2>Total Price: {this.getTotalSum()}</h2>
-			</div>
-			<Button type = 'submit' bsStyle='success'>Create</Button>
-			<LinkContainer to='/invoice'><Button bsStyle='warning'>Close</Button></LinkContainer>
+
 		</Grid>
 	)
 }

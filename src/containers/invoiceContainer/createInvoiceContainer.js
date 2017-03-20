@@ -17,7 +17,7 @@ class CreateInvoiceContainer extends Component {
 			<CreateInvoiceComponent
 				title = { 'Create Invoice' }
 				header = { 'Create New Invoice' }
-				action = { this.props.createInvoice }
+				actionToCreateInvoice = { this.props.createInvoice }
 				customers = { this.props.customers }
 				products = { this.props.products }
 				/>
